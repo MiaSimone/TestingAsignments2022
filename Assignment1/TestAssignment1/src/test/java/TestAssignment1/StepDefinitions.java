@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 
 public class StepDefinitions {
 
+
     @Given("{int} celcius")
     public void celcius(Integer int1) {
         // Write code here that turns the phrase above into concrete actions
@@ -30,4 +31,19 @@ public class StepDefinitions {
         double fah = temp.celToFah(cel);
     }
 
+
+    @Given("{double} fahrenheit")
+    public void fahrenheit(Double double1) {
+        // Write code here that turns the phrase above into concrete actions
+        Temperature temp = new Temperature();
+
+        String fahrenheit = temp.fahrenheit(double1);
+    }
+    @Then("{double} fahrenheit in celcius should be displayed")
+    public void fahrenheit_in_celcius_should_be_displayed(Double double1) {
+        // Write code here that turns the phrase above into concrete actions
+        Temperature temp = new Temperature();
+
+        double cel = temp.fahToCel(double1);
+    }
 }
