@@ -6,6 +6,9 @@ public class Temperature {
         return "The temperature is " + temperature + " celcius";
     }
 
+//    public static double celToFah(double temp){
+//        return (temp*1.8)+32;
+//    }
     public static double celToFah(double temp){
         return (temp*1.8)+32;
     }

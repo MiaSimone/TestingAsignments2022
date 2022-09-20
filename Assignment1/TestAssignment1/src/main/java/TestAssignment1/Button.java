@@ -2,13 +2,12 @@ package TestAssignment1;
 
 public class Button {
 
-    public static boolean buttonClick(boolean isClicked){
+    public static boolean clickButton(boolean isClicked){
         if (isClicked){
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
 
     }
-
 }

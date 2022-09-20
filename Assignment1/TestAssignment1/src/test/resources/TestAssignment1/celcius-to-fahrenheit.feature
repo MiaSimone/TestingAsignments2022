@@ -1,4 +1,4 @@
-Feature: Fahrenheit-To-Celcius
+Feature: Celcius-To-Fahrenheit
   Convert 30 Celcius to Fahrenheit
   Scenario:  30 celcius converted to fahrenheit
     Given 30 celcius

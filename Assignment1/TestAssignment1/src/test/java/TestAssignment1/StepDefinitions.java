@@ -19,15 +19,15 @@ public class StepDefinitions {
         boolean start = false;
 
         Button button = new Button();
-        start = button.buttonClick(start);
+        start = button.clickButton(start);
 
     }
 
     @Then("{int} celcius in fahrenheit should be displayed")
-    public void celcius_in_fahrenheit_should_be_displayed(Integer int1) {
+    public void celcius_in_fahrenheit_should_be_displayed(double cel) {
         // Write code here that turns the phrase above into concrete actions
         Temperature temp = new Temperature();
-        double fah = temp.celToFah(int1);
+        double fah = temp.celToFah(cel);
     }
 
 }
