@@ -46,4 +46,16 @@ public class StepDefinitions {
 
         double cel = temp.fahToCel(double1);
     }
+
+    @Given("the number {int}")
+    public void the_number(Integer int1) {
+        System.out.println("The number is: " + int1);
+    }
+    @Then("the number {int} should be displayed in roman numerals")
+    public void the_number_should_be_displayed_in_roman_numerals(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        NumberConverter nc = new NumberConverter();
+
+        String numeral = nc.numberToNumeral(int1);
+    }
 }
