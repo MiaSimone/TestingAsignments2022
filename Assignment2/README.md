@@ -37,4 +37,29 @@ An investigation revealed the cause to be a very simple software error. A hyphen
 #### TDD:
 - Test about the correct signal - unit
 
+### 3.1 - JUnit5
+
+#### 3.1.1 - @Tag
+JUnit 5 @Tag <br>
+Annotation JUnit Tests with Tag<br>
+With JUnit 5 we can filter tests by tagging a subset of them under a unique tag name. For example, suppose we have both unit tests and integration tests implemented using JUnit 5. We can add tags on both sets of test cases:<br>
+
+
+
+#### 3.1.2 - @Disabled
+
+#### 3.1.3 - @RepeatedTest
+
+#### 3.1.4 - @BeforeEach, @AfterEach
+
+#### 3.1.5 - @BeforeAll, @AfterAll
+
+#### 3.1.6 - @DisplayName
+
+#### 3.1.7 - @Nested
+
+#### 3.1.8 - assumeFalse, assumeTrue
+
+
+
 
