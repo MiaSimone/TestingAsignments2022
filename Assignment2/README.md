@@ -37,6 +37,7 @@ An investigation revealed the cause to be a very simple software error. A hyphen
 #### TDD:
 - Test about the correct signal - unit
 
+## 3. Investigation of Tools
 ### 3.1 - JUnit5
 
 #### 3.1.1 - @Tag
@@ -104,6 +105,14 @@ Let's say we want to test if we can put a person object into the database, then 
 A test’s default name is the name of the test:
 
 <img src="ImagesForReadMeFile/9.PNG" alt="9" width="300"/>
+
+Instead we can give them a new name with DisplayName:
+
+<img src="ImagesForReadMeFile/10.PNG" alt="10" width="450"/>
+
+You could also use something called a DisplayNameGenerator to change the names in different ways. For instance in this example we call the function ReplaceUnderscores.class on the DisplayNameGenerator object, and the test names would then be “test spaces ok” instead of “test_spaces_ok”:
+
+<img src="ImagesForReadMeFile/11.PNG" alt="11" width="450"/>
 
 #### 3.1.7 - @Nested
 
