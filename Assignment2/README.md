@@ -1,5 +1,14 @@
 # TestAssignment2
 
+## Table of Contents
+[1. Refelctions](#1-reflections)
+  - [1.1 - Computer Mouse](#11---computer-mouse)
+  - [1.2 - Catastrophic Failure](#12---catastrophic-failure)
+
+[3. Investigation of Tools](#3-investigation-of-tools)
+  - [3.1 - JUnit5](#31---junit5)
+    - [3.1.1 - <b>@Tag</b>](#311---tag)
+
 ## 1. Reflections
 ### 1.1 - Computer Mouse
 
