@@ -44,6 +44,8 @@ JUnit 5 @Tag <br>
 Annotation JUnit Tests with Tag<br>
 With JUnit 5 we can filter tests by tagging a subset of them under a unique tag name. For example, suppose we have both unit tests and integration tests implemented using JUnit 5. We can add tags on both sets of test cases:<br>
 
+<img src="ImagesForReadMeFile/1.PNG" alt="Tag 1" width="600"/>
+
 
 
 #### 3.1.2 - @Disabled
