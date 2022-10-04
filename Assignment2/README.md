@@ -8,6 +8,15 @@
 [3. Investigation of Tools](#3-investigation-of-tools)
   - [3.1 - JUnit5](#31---junit5)
     - [3.1.1 - <b>@Tag</b>](#311---tag)
+    - [3.1.2 - <b>@Disabled</b>](#312---disabled)
+    - [3.1.3 - <b>@RepeatedText</b>](#313---repeatedtest)
+    - [3.1.4 - <b>@BeforeEach</b>, <b>@AfterEach</b>](#314---beforeeach-aftereach)
+    - [3.1.5 - <b>@BeforeAll</b>, <b>@AfterAll</b>](#315---beforeall-afterall)
+    - [3.1.6 - <b>@DisplayName</b>](#316---displayname)
+    - [3.1.7 - <b>@Nested</b>](#317---nested)
+    - [3.1.8 - <b>@assumeFalse</b>, <b>@assumeTrue</b>](#318---assumefalse-assumetrue)
+
+  - [3.2 - Mocking Frameworks](#32---mocking-frameworks)
 
 ## 1. Reflections
 ### 1.1 - Computer Mouse
@@ -133,5 +142,5 @@ These assumptions are used to about a tests if some conditions aren’t true or 
 
 <img src="ImagesForReadMeFile/13.PNG" alt="13" width="450"/>
 
-
+### 3.2 - Mocking Frameworks
 
