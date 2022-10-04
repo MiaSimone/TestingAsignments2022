@@ -46,17 +46,64 @@ With JUnit 5 we can filter tests by tagging a subset of them under a unique tag 
 
 <img src="ImagesForReadMeFile/1.PNG" alt="Tag 1" width="600"/>
 
+Henceforth we can execute all tests under a particular tag name separately. We can also tag the class instead of methods. Thereby including all tests in a class under a tag. <br>
+ 
+Can also use Filtering Tags with Maven Surefire plugin <br>
+For filtering JUnit tests within the various phases of the Maven build, we can use the Maven Surefire plugin. The Surefire plugin allows us to include or exclude the tags in the plugin configuration:
 
+<img src="ImagesForReadMeFile/2.PNG" alt="2" width="400"/>
+
+If we now execute this plugin, it will execute all tests which are tagged as UnitTest. Similarly, we can exclude test cases under a tag name:
+
+<img src="ImagesForReadMeFile/3.PNG" alt="3" width="400"/>
+
+JUnit 5 allows various <a href="https://junit.org/junit5/docs/current/user-guide/#running-tests-tag-expressions">Tag Expressions</a> which can be used to filter the tags. For example, to run everything but the integration tests, we could use <i>!IntegrationTest</i> as the Tag Expression. Or for executing both <i>UnitTest</i> and <i>IntegrationTest</i>, we can use <i>UnitTest</i> | <i>IntegrationTest</i>.
 
 #### 3.1.2 - @Disabled
+JUnit 5 @Disabled annotation can be used to exclude the test methods from the test suite. This annotation can be applied over a test class as well as over individual test methods. <br>
+
+It accepts only one optional parameter, which indicates the reason this test is disabled.<br>
+
+When @Disabled is applied over test class, all test methods within that class are automatically disabled as well.
+
+<img src="ImagesForReadMeFile/4.PNG" alt="4" width="600"/>
+
+Here both tests are skipped because the whole class is @Disabled.
+
+<img src="ImagesForReadMeFile/5.PNG" alt="5" width="600"/>
+
+When this is executed there will only be 1 test because the other one is @Disabled
 
 #### 3.1.3 - @RepeatedTest
+JUnit 5 @RepeatedTest annotation<br>
+
+It provides us a powerful way to write any test that we want to repeat several times.<br>
+
+Creating a repeated test is simple – just add the @RepeatedTest annotation on top of the test method:<br>
+
+<img src="ImagesForReadMeFile/6.PNG" alt="6" width="500"/>
+
+Note that instead of standard @Test annotation, we are using @RepeatedTest for our unit test. The above test will be executed three times as if the same test was written three times.
 
 #### 3.1.4 - @BeforeEach, @AfterEach
+Each execution of the @RepeatedTest will behave like a regular @Test having full JUnit test life cycle support. Meaning that, during each execution, the @BeforeEach and @AfterEach methods will be called. To demonstrate this, just add the appropriate methods in the test class:
+
+<img src="ImagesForReadMeFile/7.PNG" alt="7" width="400"/>
+
+If we run our previous test, the results will be displayed on the console:
+
+<img src="ImagesForReadMeFile/8.PNG" alt="8" width="200"/>
+
+As we can see, the @BeforeEach and @AfterEach methods are called around each execution.
 
 #### 3.1.5 - @BeforeAll, @AfterAll
+BeforeAll and AfterAll is used to instantiate something that all the tests can use. For instance if we want to test POST, UPDATE and DELETE to a database then the BeforeAll can do the connection and AfterAll can delete the tested tables.<br>
+Let's say we want to test if we can put a person object into the database, then change the person's name, and finally kill the person then that one person is in focus and therefore we don't need to connect to a database every test. We only need to connect once, do our changes, and then delete the table or database AfterAll tests. 
 
 #### 3.1.6 - @DisplayName
+A test’s default name is the name of the test:
+
+<img src="ImagesForReadMeFile/9.PNG" alt="9" width="300"/>
 
 #### 3.1.7 - @Nested
 
