@@ -60,6 +60,17 @@ If we now execute this plugin, it will execute all tests which are tagged as Uni
 JUnit 5 allows various <a href="https://junit.org/junit5/docs/current/user-guide/#running-tests-tag-expressions">Tag Expressions</a> which can be used to filter the tags. For example, to run everything but the integration tests, we could use <i>!IntegrationTest</i> as the Tag Expression. Or for executing both <i>UnitTest</i> and <i>IntegrationTest</i>, we can use <i>UnitTest</i> | <i>IntegrationTest</i>.
 
 #### 3.1.2 - @Disabled
+JUnit 5 @Disabled annotation can be used to exclude the test methods from the test suite. This annotation can be applied over a test class as well as over individual test methods. <br>
+
+It accepts only one optional parameter, which indicates the reason this test is disabled.<br>
+
+When @Disabled is applied over test class, all test methods within that class are automatically disabled as well.
+
+<img src="ImagesForReadMeFile/4.PNG" alt="4" width="600"/>
+Here both tests are skipped because the whole class is @Disabled.
+
+<img src="ImagesForReadMeFile/5.PNG" alt="5" width="600"/>
+When this is executed there will only be 1 test because the other one is @Disabled
 
 #### 3.1.3 - @RepeatedTest
 
