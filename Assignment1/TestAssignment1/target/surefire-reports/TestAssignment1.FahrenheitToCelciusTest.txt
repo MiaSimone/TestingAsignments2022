@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestAssignment1.FahrenheitToCelciusTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+>>>>>>> 77d1ecf7f9172d02e18ef67422e6e0f72d069888
