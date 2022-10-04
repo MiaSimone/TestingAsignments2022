@@ -73,6 +73,13 @@ Here both tests are skipped because the whole class is @Disabled.
 When this is executed there will only be 1 test because the other one is @Disabled
 
 #### 3.1.3 - @RepeatedTest
+JUnit 5 @RepeatedTest annotation<br>
+
+It provides us a powerful way to write any test that we want to repeat several times.<br>
+
+Creating a repeated test is simple – just add the @RepeatedTest annotation on top of the test method:<br>
+<img src="ImagesForReadMeFile/6.PNG" alt="6" width="500"/>
+Note that instead of standard @Test annotation, we are using @RepeatedTest for our unit test. The above test will be executed three times as if the same test was written three times.
 
 #### 3.1.4 - @BeforeEach, @AfterEach
 
