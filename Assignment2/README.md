@@ -115,9 +115,14 @@ You could also use something called a DisplayNameGenerator to change the names i
 <img src="ImagesForReadMeFile/11.PNG" alt="11" width="450"/>
 
 #### 3.1.7 - @Nested
+The Nested test anotation means that we can create a new test class inside a test class. There is no limit of how far the hieraki can go. The BeforeAll and AfterAll can not be used in a nested test class because they are static and a nested test doesn’t allow static content. By default a nested class can only contain one BeforeEach and one AfterEach.
+
+<img src="ImagesForReadMeFile/12.PNG" alt="12" width="550"/>
 
 #### 3.1.8 - assumeFalse, assumeTrue
+These assumptions are used to about a tests if some conditions aren’t true or false. Fx this test should only run if the environment if DEV:
 
+<img src="ImagesForReadMeFile/13.PNG" alt="13" width="450"/>
 
 
 
