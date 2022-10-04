@@ -101,6 +101,9 @@ BeforeAll and AfterAll is used to instantiate something that all the tests can u
 Let's say we want to test if we can put a person object into the database, then change the person's name, and finally kill the person then that one person is in focus and therefore we don't need to connect to a database every test. We only need to connect once, do our changes, and then delete the table or database AfterAll tests. 
 
 #### 3.1.6 - @DisplayName
+A test’s default name is the name of the test:
+
+<img src="ImagesForReadMeFile/9.PNG" alt="9" width="300"/>
 
 #### 3.1.7 - @Nested
 
