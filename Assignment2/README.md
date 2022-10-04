@@ -97,6 +97,8 @@ If we run our previous test, the results will be displayed on the console:
 As we can see, the @BeforeEach and @AfterEach methods are called around each execution.
 
 #### 3.1.5 - @BeforeAll, @AfterAll
+BeforeAll and AfterAll is used to instantiate something that all the tests can use. For instance if we want to test POST, UPDATE and DELETE to a database then the BeforeAll can do the connection and AfterAll can delete the tested tables.<br>
+Let's say we want to test if we can put a person object into the database, then change the person's name, and finally kill the person then that one person is in focus and therefore we don't need to connect to a database every test. We only need to connect once, do our changes, and then delete the table or database AfterAll tests. 
 
 #### 3.1.6 - @DisplayName
 
