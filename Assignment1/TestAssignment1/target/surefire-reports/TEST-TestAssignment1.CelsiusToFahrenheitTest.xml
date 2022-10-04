@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="4" failures="0" name="TestAssignment1.CelsiusToFahrenheitTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -7,6 +8,38 @@
     <property name="user.country.format" value="DK"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="maven.multiModuleProjectDirectory" value="C:\Users\arme\Documents\Cphbusiness\IntelliJ Projects\TestingAsignments2022\Assignment1\TestAssignment1"/>
+=======
+<<<<<<< HEAD
+<testsuite tests="5" failures="0" name="TestAssignment1.CelsiusToFahrenheitTest" time="0.007" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="15.0.2+7-27"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15.0.2\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\miade\IdeaProjects\TestAssignments2022\Assignment1\TestAssignment1"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="DK"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\miade\IdeaProjects\TestAssignments2022\Assignment1\TestAssignment1"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="15.0.2+7-27"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\miade\AppData\Local\Temp\"/>
+=======
+<testsuite tests="4" failures="0" name="TestAssignment1.CelsiusToFahrenheitTest" time="0.005" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_261\jre\bin"/>
+    <property name="java.vm.version" value="25.261-b12"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Malthe\Documents\CphBus\SoftwareDev\1Sem\Tests\TestingAsignments2022\Assignment1\TestAssignment1"/>
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,47 +50,128 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<<<<<<< HEAD
     <property name="user.dir" value="C:\Users\arme\Documents\Cphbusiness\IntelliJ Projects\TestingAsignments2022\Assignment1\TestAssignment1"/>
     <property name="java.runtime.version" value="1.8.0_201-b09"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_201\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\arme\AppData\Local\Temp\"/>
+=======
+    <property name="user.dir" value="C:\Users\Malthe\Documents\CphBus\SoftwareDev\1Sem\Tests\TestingAsignments2022\Assignment1\TestAssignment1"/>
+    <property name="java.runtime.version" value="1.8.0_261-b12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_261\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Malthe\AppData\Local\Temp\"/>
+>>>>>>> 77d1ecf7f9172d02e18ef67422e6e0f72d069888
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
+<<<<<<< HEAD
     <property name="classworlds.conf" value="C:\Users\arme\Documents\Cphbusiness\apache-maven-3.8.6\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_201\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Python310-32\Scripts\;C:\Program Files (x86)\Python310-32\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\arme\AppData\Local\Microsoft\WindowsApps;C:\Users\arme\AppData\Local\GitHubDesktop\bin;C:\Users\arme\AppData\Roaming\npm;C:\Users\arme\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\GitHub CLI\;C:\Users\arme\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Users\arme\Documents\DataScience\hbase-3.0.0-alpha-2\bin;C:\Users\arme\.dotnet\tools;C:\Users\arme\Documents\Cphbusiness\apache-maven-3.8.6\bin;C:\Program Files\Java\jdk1.8.0_201\bin;;."/>
     <property name="maven.conf" value="C:\Users\arme\Documents\Cphbusiness\apache-maven-3.8.6/conf"/>
+=======
+<<<<<<< HEAD
+    <property name="classworlds.conf" value="C:\Program Files\Maven\apache-maven-3.8.6-bin\apache-maven-3.8.6\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-15.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;c:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;c:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\HashiCorp\Vagrant\bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Kubernetes\Minikube\minikube;C:\Program Files\Maven\apache-maven-3.8.6-bin\apache-maven-3.8.6\bin;C:\Program Files\Java\jdk-15.0.2\bin;C:\Program Files\flyway-commandline-9.3.1-windows-x64\flyway-9.3.1;C:\Users\miade\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\miade\AppData\Local\Programs\Python\Python310\;C:\Users\miade\AppData\Local\Microsoft\WindowsApps;C:\Users\miade\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\miade\AppData\Roaming\npm;C:\Users\miade\.dotnet\tools;C:\Program Files\Azure Data Studio\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\bin;;C:\Program Files\terraform;;."/>
+    <property name="maven.conf" value="C:\Program Files\Maven\apache-maven-3.8.6-bin\apache-maven-3.8.6/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="59.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\Maven\apache-maven-3.8.6-bin\apache-maven-3.8.6\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\miade"/>
+    <property name="user.timezone" value="Europe/Copenhagen"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.specification.version" value="15"/>
+    <property name="user.name" value="miade"/>
+    <property name="java.class.path" value="C:\Program Files\Maven\apache-maven-3.8.6-bin\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-15.0.2"/>
+    <property name="user.language" value="da"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="15.0.2"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="sun.stderr.encoding" value="cp850"/>
+    <property name="maven.home" value="C:\Program Files\Maven\apache-maven-3.8.6-bin\apache-maven-3.8.6"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2021-01-19"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.stdout.encoding" value="cp850"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testCelToFah" time="0.006"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testDoubleButtonClick" time="0"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testCelcius" time="0.001"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testButtonClick2" time="0"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testButtonClick" time="0"/>
+=======
+    <property name="classworlds.conf" value="C:\Program Files (x86)\apache-maven-3.6.3\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_261\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot\bin;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\apache-maven-3.6.3\bin;C:\ProgramData\chocolatey\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Kubernetes\Minikube;C:\Users\Malthe\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\apache-maven-3.6.3\bin;C:\Users\Malthe\AppData\Local\GitHubDesktop\bin;C:\Users\Malthe\.dotnet\tools;C:\Users\Malthe\AppData\Local\Programs\Azure Data Studio\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\Malthe\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\bin;;."/>
+    <property name="maven.conf" value="C:\Program Files (x86)\apache-maven-3.6.3\bin\../conf"/>
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
+<<<<<<< HEAD
     <property name="library.jansi.path" value="C:\Users\arme\Documents\Cphbusiness\apache-maven-3.8.6\lib\jansi-native"/>
     <property name="user.home" value="C:\Users\arme"/>
+=======
+    <property name="library.jansi.path" value="C:\Program Files (x86)\apache-maven-3.6.3\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Malthe"/>
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
     <property name="user.timezone" value="Europe/Paris"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="Cp1252"/>
+<<<<<<< HEAD
     <property name="user.name" value="arme"/>
     <property name="java.class.path" value="C:\Users\arme\Documents\Cphbusiness\apache-maven-3.8.6\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_201\jre"/>
+=======
+    <property name="user.name" value="Malthe"/>
+    <property name="java.class.path" value="C:\Program Files (x86)\apache-maven-3.6.3\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_261\jre"/>
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
+<<<<<<< HEAD
     <property name="java.version" value="1.8.0_201"/>
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_201\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_201\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_201\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_201\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_201\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_201\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_201\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_201\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_201\jre\classes"/>
     <property name="sun.stderr.encoding" value="cp437"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="C:\Users\arme\Documents\Cphbusiness\apache-maven-3.8.6"/>
+=======
+    <property name="java.version" value="1.8.0_261"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_261\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_261\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_261\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_261\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_261\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_261\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_261\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_261\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_261\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp437"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files (x86)\apache-maven-3.6.3\bin\.."/>
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -66,8 +180,16 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testCelToFah" time="0.005"/>
   <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testDoubleButtonClick" time="0"/>
   <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testCelcius" time="0"/>
   <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testButtonClick" time="0"/>
+=======
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testCelToFah" time="0.004"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testDoubleButtonClick" time="0"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testCelcius" time="0"/>
+  <testcase classname="TestAssignment1.CelsiusToFahrenheitTest" name="testButtonClick" time="0.001"/>
+>>>>>>> 77d1ecf7f9172d02e18ef67422e6e0f72d069888
+>>>>>>> 0222f056414245b914dde58b3592c736ad683cb0
 </testsuite>

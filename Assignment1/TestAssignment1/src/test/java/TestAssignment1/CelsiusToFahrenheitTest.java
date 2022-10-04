@@ -18,18 +18,23 @@ public class CelsiusToFahrenheitTest extends TestCase {
         assertEquals(86.0, temp.celToFah(30));
     }
 
-    public void testButtonClickFail(){
-        Button button = new Button();
-
-        boolean click = false;
-
-        assertEquals(click, button.clickButton(click));
-    }
+//    public void testButtonClickFail(){
+//        Button button = new Button();
+//
+//        boolean click = false;
+//
+//        assertEquals(click, button.clickButton(click));
+//    }
 
     public void testButtonClick(){
         Button button = new Button();
 
         assertEquals(true, button.clickButton(false));
+    }
+    public void testButtonClick2(){
+        Button button = new Button();
+
+        assertEquals(false, button.clickButton(true));
     }
 
     public void testDoubleButtonClick(){
