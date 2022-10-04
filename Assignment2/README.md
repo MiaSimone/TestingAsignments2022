@@ -46,7 +46,18 @@ With JUnit 5 we can filter tests by tagging a subset of them under a unique tag 
 
 <img src="ImagesForReadMeFile/1.PNG" alt="Tag 1" width="600"/>
 
+Henceforth we can execute all tests under a particular tag name separately. We can also tag the class instead of methods. Thereby including all tests in a class under a tag. <br>
+ 
+Can also use Filtering Tags with Maven Surefire plugin <br>
+For filtering JUnit tests within the various phases of the Maven build, we can use the Maven Surefire plugin. The Surefire plugin allows us to include or exclude the tags in the plugin configuration:
 
+<img src="ImagesForReadMeFile/2.PNG" alt="2" width="400"/>
+
+If we now execute this plugin, it will execute all tests which are tagged as UnitTest. Similarly, we can exclude test cases under a tag name:
+
+<img src="ImagesForReadMeFile/3.PNG" alt="3" width="400"/>
+
+JUnit 5 allows various <a href="https://junit.org/junit5/docs/current/user-guide/#running-tests-tag-expressions">Tag Expressions</a> which can be used to filter the tags. For example, to run everything but the integration tests, we could use <i>!IntegrationTest</i> as the Tag Expression. Or for executing both <i>UnitTest</i> and <i>IntegrationTest</i>, we can use <i>UnitTest</i> | <i>IntegrationTest</i>.
 
 #### 3.1.2 - @Disabled
 
