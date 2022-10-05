@@ -17,6 +17,10 @@
     - [3.1.8 - <b>@assumeFalse</b>, <b>@assumeTrue</b>](#318---assumefalse-assumetrue)
 
   - [3.2 - Mocking Frameworks](#32---mocking-frameworks)
+    - [Chosen mocking frameworks](#chosen-mocking-frameworks)
+    - [What are their similarities?](#what-are-their-similarities)
+    - [What are their differences?](#what-are-their-differences)
+    - [Which one would you prefer, if any, and why?](#which-one-would-you-prefer-if-any-and-why)
 
 ## 1. Reflections
 ### 1.1 - Computer Mouse
@@ -143,4 +147,15 @@ These assumptions are used to about a tests if some conditions aren’t true or 
 <img src="ImagesForReadMeFile/13.PNG" alt="13" width="450"/>
 
 ### 3.2 - Mocking Frameworks
+#### Chosen mocking frameworks:
+1. Mockito
+2. JMockit
 
+#### What are their similarities?
+Both of them are easily configured with annotations to help define mocks and the so-called object-under-test, with runners to make mock injection fairly easy. Additionally, they both more or less follow the ‘record-replay-verify pattern’.
+
+#### What are their differences?
+Mockito has a special annotation for partial mocks, while JMockit does not. However, JMockit also does not really need it apparently. When verifying that a mock received no calls in Mockito, you have a specific method that is required in that specific scenario (verifyNoInteractions()), meanwhile for JMockit you actually don’t specify expectations for that mock and just do FullVerifications(mock) for said mock instead.
+
+#### Which one would you prefer, if any, and why?
+If we had to choose one, we would probably pick JMockit, simply due to how seemingly easy it is to use and its fixed syntax structure. The way you have to use it seems more logical, which we think is an important attribute for any framework to have.
