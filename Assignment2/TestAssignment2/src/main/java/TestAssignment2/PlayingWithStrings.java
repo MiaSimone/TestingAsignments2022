@@ -6,14 +6,17 @@ public class PlayingWithStrings {
     }
 
     public String ReverseAString(String source) {
+
+        StringBuilder str = new StringBuilder();
         if(source == null || source.isEmpty()) {
             return source;
         }
-        String reverse = "";
+//        String reverse = "";
         for(int i = source.length() -1; i>=0; i--){
-            reverse = reverse + source.charAt(i);
+            str.append(source.charAt(i));
+//            reverse = reverse + source.charAt(i);
         }
-        return reverse;
+        return str.toString();
     }
 
     public String CapitalizeAString(String source) {
