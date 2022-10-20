@@ -23,7 +23,7 @@ public class CustomerStorageImpl implements CustomerStorage {
 
     @Override
     public Customer getCustomerWithId(int customerId) throws SQLException {
-        var sql = "select ID, firstname, lastname, birthdate from Customers where id = ?";
+        var sql = "select ID, firstname, lastname, birthdate,phoneNr from Customers where id = ?";
         try (var con = getConnection();
              var stmt = con.prepareStatement(sql)) {
             stmt.setInt(1, customerId);
@@ -33,7 +33,8 @@ public class CustomerStorageImpl implements CustomerStorage {
                     var id = resultSet.getInt("ID");
                     var firstname = resultSet.getString("firstname");
                     var lastname = resultSet.getString("lastname");
-                    return new Customer(id, firstname, lastname);
+                    var phoneNr = resultSet.getString("phoneNr");
+                    return new Customer(id, firstname, lastname, phoneNr);
                 }
                 return null;
             }
@@ -45,14 +46,14 @@ public class CustomerStorageImpl implements CustomerStorage {
              var stmt = con.createStatement()) {
             var results = new ArrayList<Customer>();
 
-            try (ResultSet resultSet = stmt.executeQuery("select ID, firstname, lastname from Customers")) {
+            try (ResultSet resultSet = stmt.executeQuery("select ID, firstname, lastname,phoneNr from Customers")) {
 
                 while (resultSet.next()) {
                     int id = resultSet.getInt("ID");
                     String firstname = resultSet.getString("firstname");
                     String lastname = resultSet.getString("lastname");
-
-                    Customer c = new Customer(id, firstname, lastname);
+                    String phoneNr = resultSet.getString("phoneNr");
+                    Customer c = new Customer(id, firstname, lastname, phoneNr);
                     results.add(c);
                 }
             }
@@ -62,12 +63,12 @@ public class CustomerStorageImpl implements CustomerStorage {
     }
 
     public int createCustomer(CustomerCreation customerToCreate) throws SQLException {
-        var sql = "insert into Customers(firstname, lastname) values (?, ?)";
+        var sql = "insert into Customers(firstname, lastname,phoneNr) values (?, ?, ?)";
         try (var con = getConnection();
             var stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, customerToCreate.getFirstname());
             stmt.setString(2, customerToCreate.getLastname());
-
+            stmt.setString(3, customerToCreate.getPhoneNr());
             stmt.executeUpdate();
 
             // get the newly created id

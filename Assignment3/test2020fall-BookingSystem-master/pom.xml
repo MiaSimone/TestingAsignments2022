@@ -19,11 +19,11 @@
                 <configuration>
                     <url>jdbc:mysql://localhost:3306/</url>
                     <user>root</user>
-                    <password>hulluballu</password>
-                    <defaultSchema>DemoApplication</defaultSchema>
+                    <password>schmeep7</password>
+                    <defaultSchema>assignment3_mysql</defaultSchema>
                     <createSchemas>true</createSchemas>
                     <schemas>
-                        <schema>DemoApplication</schema>
+                        <schema>assignment3_mysql</schema>
                     </schemas>
                 </configuration>
             </plugin>

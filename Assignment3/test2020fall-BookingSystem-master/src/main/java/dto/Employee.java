@@ -1,14 +1,15 @@
 package dto;
 
-public class Customer {
-    private final int id;
-    private final String firstname, lastname, phoneNr;
+import java.time.LocalDateTime;
+import java.util.Date;
 
-    public Customer(int id, String firstname, String lastname, String phoneNr) {
+public class Employee {
+    private final int id;
+    private final String firstname, lastname;
+    public Employee(int id, String firstname, String lastname) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.phoneNr = phoneNr;
     }
 
     public int getId() {
@@ -22,4 +23,5 @@ public class Customer {
     public String getLastname() {
         return lastname;
     }
+
 }

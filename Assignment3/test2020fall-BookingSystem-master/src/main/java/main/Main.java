@@ -1,15 +1,15 @@
 package main;
 
-import dto.Customer;
 import datalayer.customer.CustomerStorageImpl;
+import dto.Customer;
 
 import java.sql.SQLException;
 
 public class Main {
 
-    private static final String conStr = "jdbc:mysql://localhost:3306/DemoApplication";
+    private static final String conStr = "jdbc:mysql://localhost:3306/assignment3";
     private static final String user = "root";
-    private static final String pass = "schmeep7";
+    private static final String pass = "root";
 
     public static void main(String[] args) throws SQLException {
         CustomerStorageImpl storage = new CustomerStorageImpl(conStr, user, pass);

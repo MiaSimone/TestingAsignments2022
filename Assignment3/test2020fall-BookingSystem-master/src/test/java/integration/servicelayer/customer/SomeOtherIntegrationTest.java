@@ -32,7 +32,7 @@ public class SomeOtherIntegrationTest extends ContainerizedDbIntegrationTest {
     @Test
     public void Stuff() throws CustomerServiceException, SQLException {
         // Arrange
-        var id = svc.createCustomer("schmeep", "schmoop", Date.valueOf("1987-10-07"));
+        var id = svc.createCustomer("schmeep", "schmoop", "60606060",Date.valueOf("1987-10-07"));
 
         // Act
         var c = svc.getCustomerById(id);

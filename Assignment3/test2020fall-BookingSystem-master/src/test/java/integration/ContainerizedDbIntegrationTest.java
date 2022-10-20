@@ -8,27 +8,22 @@ import org.testcontainers.utility.DockerImageName;
 public class ContainerizedDbIntegrationTest {
 
     private static final int PORT = 3306;
-    private static final String PASSWORD = "testuser1234";
+
+    // CHANGE THIS PASSWORD PLEASE
+    private static final String PASSWORD = "password";
 
     public static MySQLContainer mysql;
-
-    static {
-         mysql = (MySQLContainer) new MySQLContainer(DockerImageName.parse("mysql"))
-                .withPassword(PASSWORD)
-                .withExposedPorts(PORT);
-         mysql.start();
-    }
 
     protected String getDbPassword() {
         return PASSWORD;
     }
 
     protected String getDbUrl(){
-        return "jdbc:mysql://"+mysql.getHost()+":"+mysql.getFirstMappedPort()+"/";
+        return "jdbc:mysql://127.0.0.1:3306/";
     }
 
     protected String getDb() {
-        return "DemoApplicationTest";
+        return "assignment3test";
     }
 
     protected String getConnectionString() {
@@ -46,6 +41,7 @@ public class ContainerizedDbIntegrationTest {
                         .target(Double.toString(level))
                         .dataSource(url, "root", PASSWORD)
         );
+        flyway.repair();
         flyway.migrate();
     }
 
