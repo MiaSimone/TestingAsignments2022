@@ -17,9 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public int createCustomer(String firstName, String lastName, Date birthdate) throws CustomerServiceException {
+    public int createCustomer(String firstName, String lastName,String phoneNr, Date birthdate) throws CustomerServiceException {
         try {
-            return customerStorage.createCustomer(new CustomerCreation(firstName, lastName));
+            return customerStorage.createCustomer(new CustomerCreation(firstName, lastName,phoneNr));
         } catch (SQLException throwables) {
             throw new CustomerServiceException(throwables.getMessage());
         }

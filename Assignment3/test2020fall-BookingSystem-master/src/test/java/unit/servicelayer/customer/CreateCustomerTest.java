@@ -38,8 +38,9 @@ public class CreateCustomerTest {
         var firstName = "a";
         var lastName = "b";
         var birthdate = new Date(123456789l);
+        var phoneNr= "60606060";
 
-        customerService.createCustomer(firstName, lastName, birthdate);
+        customerService.createCustomer(firstName, lastName,phoneNr, birthdate);
 
         // Assert
         // Can be read like: verify that storageMock was called 1 time on the method

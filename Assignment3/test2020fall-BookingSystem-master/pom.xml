@@ -19,11 +19,11 @@
                 <configuration>
                     <url>jdbc:mysql://localhost:3306/</url>
                     <user>root</user>
-                    <password>hulluballu</password>
-                    <defaultSchema>DemoApplication</defaultSchema>
+                    <password>schmeep7</password>
+                    <defaultSchema>assignment3_mysql</defaultSchema>
                     <createSchemas>true</createSchemas>
                     <schemas>
-                        <schema>DemoApplication</schema>
+                        <schema>assignment3_mysql</schema>
                     </schemas>
                 </configuration>
             </plugin>
@@ -156,7 +156,7 @@
     </dependencies>
 
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 </project>

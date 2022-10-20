@@ -34,7 +34,8 @@ class SvcCreateCustomerTest extends ContainerizedDbIntegrationTest {
         var firstName = "John";
         var lastName = "Johnson";
         var bday = new Date(1239821l);
-        int id = svc.createCustomer(firstName, lastName, bday);
+        var phoneNr= "60606060";
+        int id = svc.createCustomer(firstName, lastName, phoneNr,bday);
 
         // Act
         var createdCustomer = storage.getCustomerWithId(id);
