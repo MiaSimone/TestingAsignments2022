@@ -19,7 +19,7 @@
                 <configuration>
                     <url>jdbc:mysql://localhost:3306/</url>
                     <user>root</user>
-                    <password>schmeep7</password>
+                    <password>hulluballu</password>
                     <defaultSchema>DemoApplication</defaultSchema>
                     <createSchemas>true</createSchemas>
                     <schemas>
