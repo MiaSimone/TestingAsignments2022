@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: integration.rest.RestIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! - in integration.rest.RestIT
+whenSendingGet_thenMessageIsReturned  Time elapsed: 0.028 s  <<< ERROR!
+java.io.IOException: Invalid Http response
+	at integration.rest.RestIT.whenSendingGet_thenMessageIsReturned(RestIT.java:19)
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="da"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookingServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BookingSystem</a> &gt; <a href="index.source.html" class="el_package">servicelayer.booking</a> &gt; <span class="el_source">BookingServiceImpl.java</span></div><h1>BookingServiceImpl.java</h1><pre class="source lang-java linenums">package servicelayer.booking;
+
+import datalayer.booking.BookingStorage;
+import dto.BookingCreation;
+import dto.BookingStorageException;
+import dto.SmsMessage;
+import servicelayer.notifications.SmsService;
+import servicelayer.notifications.SmsServiceMock;
+
+import java.util.Collection;
+
+public class BookingServiceImpl implements BookingService{
+    private BookingStorage bookingStorage;
+<span class="fc" id="L14">    public BookingServiceImpl(BookingStorage bookingStorage) {</span>
+<span class="fc" id="L15">        this.bookingStorage = bookingStorage;</span>
+<span class="fc" id="L16">    }</span>
+
+    @Override
+    public int createBooking(int customerId, int employeeId, String date, String time, String end) throws BookingServiceException {
+        try {
+<span class="fc" id="L21">            SmsService smsService = new SmsServiceMock();</span>
+<span class="fc" id="L22">            boolean didSend=smsService.sendSms(new SmsMessage(&quot;60606060&quot;,&quot;You have a booking &quot;+date+&quot; from:&quot;+time+&quot;to&quot;+end));// g</span>
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">            if(didSend){</span>
+<span class="fc" id="L24">                return bookingStorage.createBooking(new BookingCreation(customerId,employeeId,date,time,end));</span>
+            }
+            else {
+<span class="nc" id="L27">                throw new BookingServiceException(&quot;Could not send sms&quot;);</span>
+            }
+            // et bookingID from show - list
+<span class="nc" id="L30">        } catch (Exception e) {</span>
+<span class="nc" id="L31">            throw new BookingServiceException(e.getMessage());</span>
+<span class="nc" id="L32">        } catch (BookingStorageException e) {</span>
+<span class="nc" id="L33">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L35">        return 0;</span>
+    }
+
+    @Override
+    public Collection getBookingsForCustomer(int customerId) throws BookingServiceException {
+        try {
+<span class="nc" id="L41">            return bookingStorage.getBookingsForCustomer(customerId);</span>
+<span class="nc" id="L42">        } catch (Exception e) {</span>
+<span class="nc" id="L43">            throw new BookingServiceException(e.getMessage());</span>
+<span class="nc" id="L44">        } catch (BookingStorageException e) {</span>
+<span class="nc" id="L45">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L47">        return null;</span>
+    }
+    @Override
+    public Collection getBookingsForEmployee(int employeeId) throws BookingServiceException {
+        try {
+<span class="nc" id="L52">            return bookingStorage.getBookingsForEmployee(employeeId);</span>
+<span class="nc" id="L53">        } catch (Exception e) {</span>
+<span class="nc" id="L54">            throw new BookingServiceException(e.getMessage());</span>
+<span class="nc" id="L55">        } catch (BookingStorageException e) {</span>
+<span class="nc" id="L56">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L58">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="da"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookingStorageImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BookingSystem</a> &gt; <a href="index.source.html" class="el_package">datalayer.booking</a> &gt; <span class="el_source">BookingStorageImpl.java</span></div><h1>BookingStorageImpl.java</h1><pre class="source lang-java linenums">package datalayer.booking;
+
+import dto.Booking;
+import dto.BookingCreation;
+import dto.BookingStorageException;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BookingStorageImpl implements BookingStorage {
+    private String connectionString;
+    private String username, password;
+
+<span class="nc" id="L18">    public BookingStorageImpl(String conStr, String user, String pass){</span>
+<span class="nc" id="L19">        connectionString = conStr;</span>
+<span class="nc" id="L20">        username = user;</span>
+<span class="nc" id="L21">        password = pass;</span>
+<span class="nc" id="L22">    }</span>
+
+    private Connection getConnection() throws SQLException {
+<span class="nc" id="L25">        return DriverManager.getConnection(connectionString, username, password);</span>
+    }
+
+    @Override
+    public int createBooking(BookingCreation bookingCreation) throws BookingStorageException {
+<span class="nc" id="L30">        var sql = &quot;INSERT INTO Bookings (customerId, employeeId, date, start,end) VALUES (?, ?, ?, ?,?)&quot;;</span>
+<span class="nc" id="L31">        try (var connection = getConnection();</span>
+<span class="nc" id="L32">             var preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {</span>
+
+<span class="nc" id="L34">            preparedStatement.setInt(1, bookingCreation.customerId);</span>
+<span class="nc" id="L35">            preparedStatement.setInt(2, bookingCreation.employeeId);</span>
+<span class="nc" id="L36">            preparedStatement.setString(3, bookingCreation.date);</span>
+<span class="nc" id="L37">            preparedStatement.setString(4, bookingCreation.start);</span>
+<span class="nc" id="L38">            preparedStatement.setString(5, bookingCreation.end);</span>
+<span class="nc" id="L39">            preparedStatement.execute();</span>
+<span class="nc" id="L40">            try (var resultSet = preparedStatement.getGeneratedKeys()) {</span>
+<span class="nc" id="L41">                resultSet.next();</span>
+<span class="nc" id="L42">                int newId = resultSet.getInt(1);</span>
+<span class="nc" id="L43">                return newId;</span>
+            }
+
+<span class="nc" id="L46">        } catch (Exception e) {</span>
+<span class="nc" id="L47">            throw new BookingStorageException(e.getMessage());</span>
+        }
+    }
+
+    @Override
+    public List&lt;Booking&gt; getBookingsForCustomer(int customerId) throws BookingStorageException {
+<span class="nc" id="L53">        var sql = &quot;SELECT * FROM Bookings WHERE customerId = ?&quot;;</span>
+<span class="nc" id="L54">        try (var connection = getConnection();</span>
+<span class="nc" id="L55">             var preparedStatement = connection.prepareStatement(sql)) {</span>
+<span class="nc" id="L56">            preparedStatement.setInt(1, customerId);</span>
+<span class="nc" id="L57">            try (var resultSet = preparedStatement.executeQuery()) {</span>
+<span class="nc" id="L58">                var bookingList = new ArrayList&lt;Booking&gt;();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">                while (resultSet.next()) {</span>
+<span class="nc" id="L60">                    var id = resultSet.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L61">                    var employeeId = resultSet.getInt(&quot;employeeId&quot;);</span>
+<span class="nc" id="L62">                    var date = resultSet.getString(&quot;date&quot;);</span>
+<span class="nc" id="L63">                    var start = resultSet.getString(&quot;start&quot;);</span>
+<span class="nc" id="L64">                    var end = resultSet.getString(&quot;end&quot;);</span>
+<span class="nc" id="L65">                    var booking = new Booking(id, customerId, employeeId, date, start,end);</span>
+<span class="nc" id="L66">                    bookingList.add(booking);</span>
+<span class="nc" id="L67">                }</span>
+<span class="nc" id="L68">                return bookingList;</span>
+            }
+<span class="nc" id="L70">        } catch (Exception e) {</span>
+<span class="nc" id="L71">            throw new BookingStorageException(e.getMessage());</span>
+        }
+    }
+
+    @Override
+    public List&lt;Booking&gt; getBookingsForEmployee(int employeeId) throws BookingStorageException {
+<span class="nc" id="L77">        var sql = &quot;SELECT * FROM Bookings WHERE employeeId = ?&quot;;</span>
+<span class="nc" id="L78">        try (var connection = getConnection();</span>
+<span class="nc" id="L79">             var preparedStatement = connection.prepareStatement(sql)) {</span>
+<span class="nc" id="L80">            preparedStatement.setInt(1, employeeId);</span>
+<span class="nc" id="L81">            try (var resultSet = preparedStatement.executeQuery()) {</span>
+<span class="nc" id="L82">                var bookingList = new ArrayList&lt;Booking&gt;();</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">                while (resultSet.next()) {</span>
+<span class="nc" id="L84">                    var id = resultSet.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L85">                    var customerId = resultSet.getInt(&quot;customerId&quot;);</span>
+<span class="nc" id="L86">                    var date = resultSet.getString(&quot;date&quot;);</span>
+<span class="nc" id="L87">                    var start = resultSet.getString(&quot;start&quot;);</span>
+<span class="nc" id="L88">                    var end = resultSet.getString(&quot;end&quot;);</span>
+<span class="nc" id="L89">                    var booking = new Booking(id, customerId, employeeId, date, start,end);</span>
+<span class="nc" id="L90">                    bookingList.add(booking);</span>
+<span class="nc" id="L91">                }</span>
+<span class="nc" id="L92">                return bookingList;</span>
+            }
+<span class="nc" id="L94">        } catch (Exception e) {</span>
+<span class="nc" id="L95">            throw new BookingStorageException(e.getMessage());</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -1,0 +1,7 @@
+unit\servicelayer\customer\CreateCustomerTest.class
+unit\servicelayer\employee\CreateEmployeeTest.class
+integration\ContainerizedDbIntegrationTestIT.class
+integration\servicelayer\SomeOtherIntegrationTest.class
+integration\servicelayer\SvcCreateCustomerTest.class
+unit\servicelayer\SendMessageTest.class
+unit\servicelayer\booking\CreateBookingTest.class

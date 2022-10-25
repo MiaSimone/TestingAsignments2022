@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: unit.servicelayer.customer.CreateBookingTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.064 s <<< FAILURE! - in unit.servicelayer.customer.CreateBookingTest
+unit.servicelayer.customer.CreateBookingTest.mustCallStorageWhenCreatingBooking  Time elapsed: 0.084 s  <<< ERROR!
+servicelayer.booking.BookingServiceException: Cannot invoke "servicelayer.notifications.SmsService.sendSms(dto.SmsMessage)" because "smsService" is null
+	at unit.servicelayer.customer.CreateBookingTest.mustCallStorageWhenCreatingBooking(CreateBookingTest.java:34)
+

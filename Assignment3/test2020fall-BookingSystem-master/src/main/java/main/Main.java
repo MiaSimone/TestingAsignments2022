@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class Main {
 
-    private static final String conStr = "jdbc:mysql://localhost:3306/assignment3";
+    private static final String conStr = "jdbc:mysql://localhost:3306/assignment3?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String user = "root";
-    private static final String pass = "root";
+    private static final String pass = "Cristine535";
 
     public static void main(String[] args) throws SQLException {
         CustomerStorageImpl storage = new CustomerStorageImpl(conStr, user, pass);

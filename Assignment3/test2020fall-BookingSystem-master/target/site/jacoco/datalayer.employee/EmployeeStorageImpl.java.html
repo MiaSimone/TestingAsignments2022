@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="da"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmployeeStorageImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BookingSystem</a> &gt; <a href="index.source.html" class="el_package">datalayer.employee</a> &gt; <span class="el_source">EmployeeStorageImpl.java</span></div><h1>EmployeeStorageImpl.java</h1><pre class="source lang-java linenums">package datalayer.employee;
+
+import dto.Employee;
+import dto.EmployeeCreation;
+import java.sql.*;
+import java.sql.SQLException;
+
+public class EmployeeStorageImpl implements EmployeeStorage{
+    private String connectionString;
+    private String username, password;
+
+<span class="nc" id="L12">    public EmployeeStorageImpl(String conn, String root, String dbPassword) {</span>
+<span class="nc" id="L13">        connectionString = conn;</span>
+<span class="nc" id="L14">        username = root;</span>
+<span class="nc" id="L15">        password = dbPassword;</span>
+<span class="nc" id="L16">    }</span>
+
+    private Connection getConnection() throws SQLException {
+<span class="nc" id="L19">        return DriverManager.getConnection(connectionString, username, password);</span>
+    }
+
+    @Override
+    public Employee getEmployeeWithId(int employeeId) throws SQLException {
+<span class="nc" id="L24">        var sql = &quot;select ID, firstname, lastname from Employees where id = ?&quot;;</span>
+<span class="nc" id="L25">        try (var con = getConnection();</span>
+<span class="nc" id="L26">             var stmt = con.prepareStatement(sql)) {</span>
+<span class="nc" id="L27">            stmt.setInt(1, employeeId);</span>
+
+<span class="nc" id="L29">            try (var resultSet = stmt.executeQuery()) {</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">                if (resultSet.next()){</span>
+<span class="nc" id="L31">                    var id = resultSet.getInt(&quot;ID&quot;);</span>
+<span class="nc" id="L32">                    var firstname = resultSet.getString(&quot;firstname&quot;);</span>
+<span class="nc" id="L33">                    var lastname = resultSet.getString(&quot;lastname&quot;);</span>
+<span class="nc" id="L34">                    return new Employee(id, firstname, lastname);</span>
+                }
+<span class="nc" id="L36">                return null;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">            }</span>
+<span class="nc bnc" id="L38" title="All 4 branches missed.">        }</span>
+    }
+
+    @Override
+    public int createEmployee(EmployeeCreation employeeToCreate) throws SQLException {
+<span class="nc" id="L43">        var sql = &quot;insert into Employees (firstname, lastname) values (?, ?)&quot;;</span>
+<span class="nc" id="L44">        try (var con = getConnection();</span>
+<span class="nc" id="L45">             var stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {</span>
+<span class="nc" id="L46">            stmt.setString(1, employeeToCreate.getFirstname());</span>
+<span class="nc" id="L47">            stmt.setString(2, employeeToCreate.getLastname());</span>
+<span class="nc" id="L48">            stmt.executeUpdate();</span>
+
+<span class="nc" id="L50">            try (var generatedKeys = stmt.getGeneratedKeys()) {</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">                if (generatedKeys.next()) {</span>
+<span class="nc" id="L52">                    return generatedKeys.getInt(1);</span>
+                }
+<span class="nc" id="L54">                throw new SQLException(&quot;Could not get generated key&quot;);</span>
+            }
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

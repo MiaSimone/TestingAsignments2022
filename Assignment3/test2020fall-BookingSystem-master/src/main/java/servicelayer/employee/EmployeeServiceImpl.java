@@ -1,6 +1,6 @@
 package servicelayer.employee;
 
-import datalayer.customer.EmployeeStorage;
+import datalayer.employee.EmployeeStorage;
 import dto.Employee;
 import dto.EmployeeCreation;
 

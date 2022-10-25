@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="da"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmployeeServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BookingSystem</a> &gt; <a href="index.source.html" class="el_package">servicelayer.employee</a> &gt; <span class="el_source">EmployeeServiceImpl.java</span></div><h1>EmployeeServiceImpl.java</h1><pre class="source lang-java linenums">package servicelayer.employee;
+
+import datalayer.employee.EmployeeStorage;
+import dto.Employee;
+import dto.EmployeeCreation;
+
+import java.sql.SQLException;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+    private EmployeeStorage employeeStorage;
+
+<span class="nc" id="L13">    public EmployeeServiceImpl(EmployeeStorage employeeStorage) {</span>
+<span class="nc" id="L14">        this.employeeStorage = employeeStorage;</span>
+<span class="nc" id="L15">    }</span>
+
+    @Override
+    public int employeeCreation(String firstName, String lastName) throws EmployeeServiceException {
+        try {
+<span class="nc" id="L20">            return employeeStorage.createEmployee(new EmployeeCreation(firstName, lastName));</span>
+<span class="nc" id="L21">        } catch (SQLException throwables) {</span>
+<span class="nc" id="L22">            throw new EmployeeServiceException(throwables.getMessage());</span>
+        }
+    }
+
+    @Override
+    public Employee getEmployeeById(int id) throws EmployeeServiceException, SQLException {
+<span class="nc" id="L28">        return employeeStorage.getEmployeeWithId(id);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
