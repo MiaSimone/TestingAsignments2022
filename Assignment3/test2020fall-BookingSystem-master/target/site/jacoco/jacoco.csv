@@ -6,7 +6,7 @@ BookingSystem,servicelayer.employee,EmployeeServiceImpl,27,0,0,0,7,0,3,0,3,0
 BookingSystem,datalayer.employee,EmployeeStorageImpl,116,0,10,0,29,0,9,0,4,0
 BookingSystem,datalayer.customer,CustomerStorageImpl,173,0,10,0,44,0,10,0,5,0
 BookingSystem,servicelayer.booking,BookingServiceImpl,51,35,1,1,18,7,3,2,2,2
-BookingSystem,servicelayer.booking,BookingServiceException,0,4,0,0,0,2,0,1,0,1
+BookingSystem,servicelayer.booking,BookingServiceException,4,0,0,0,2,0,1,0,1,0
 BookingSystem,datalayer.booking,BookingStorageImpl,217,0,4,0,57,0,7,0,5,0
 BookingSystem,main,Main,41,0,2,0,9,0,4,0,3,0
 BookingSystem,servicelayer.notifications,SmsServiceMock,0,5,0,0,0,2,0,2,0,2
