@@ -26,7 +26,7 @@ public class ContainerizedDbIntegrationTestIT {
     }
 
     protected String getConnectionString() {
-        return getDbUrl() + getDb();
+        return getDbUrl() + getDb() + "?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     }
 
     protected void runMigration(double level) {
