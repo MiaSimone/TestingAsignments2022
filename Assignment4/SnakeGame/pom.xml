@@ -119,29 +119,29 @@
                             </execution>
                         </executions>
                     </plugin>
+<!--                    <plugin>-->
+<!--                        <groupId>org.pitest</groupId>-->
+<!--                        <artifactId>pitest-maven</artifactId>-->
+<!--                        <version>1.9.5</version>-->
+<!--                    </plugin>-->
                 </plugins>
             </build>
-<!--        </profile>-->
-<!--    </profiles>-->
-
-
-<!--    <reporting>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.jacoco</groupId>-->
-<!--                <artifactId>jacoco-maven-plugin</artifactId>-->
-<!--                <reportSets>-->
-<!--                    <reportSet>-->
-<!--                        <reports>-->
-<!--                            &lt;!&ndash; select non-aggregate reports &ndash;&gt;-->
-<!--                            <report>report</report>-->
-<!--                        </reports>-->
-<!--                    </reportSet>-->
-<!--                </reportSets>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </reporting>-->
-
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.9.5</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
     <dependencyManagement>
         <dependencies>
             <dependency>
