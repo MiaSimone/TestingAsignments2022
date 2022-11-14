@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GamePanel3.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SnakeGame2</a> &gt; <a href="index.source.html" class="el_package">step_definitions</a> &gt; <span class="el_source">GamePanel3.java</span></div><h1>GamePanel3.java</h1><pre class="source lang-java linenums">package step_definitions;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Random;
+
+public class GamePanel3 extends JPanel implements ActionListener{
+
+    static final int SCREEN_WIDTH = 1300;
+    static final int SCREEN_HEIGHT = 750;
+    static final int UNIT_SIZE = 50;
+    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
+    static final int DELAY = 175;
+<span class="nc" id="L15">    final int x[] = new int[GAME_UNITS];</span>
+<span class="nc" id="L16">    final int y[] = new int[GAME_UNITS];</span>
+<span class="nc" id="L17">    int bodyParts = 6;</span>
+    int applesEaten;
+    int appleX;
+    int appleY;
+<span class="nc" id="L21">    char direction = 'R';</span>
+<span class="nc" id="L22">    boolean running = false;</span>
+    Timer timer;
+    Random random;
+
+<span class="nc" id="L26">    GamePanel3(){</span>
+<span class="nc" id="L27">        random = new Random();</span>
+<span class="nc" id="L28">        this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));</span>
+<span class="nc" id="L29">        this.setBackground(Color.black);</span>
+<span class="nc" id="L30">        this.setFocusable(true);</span>
+<span class="nc" id="L31">        this.addKeyListener(new MyKeyAdapter());</span>
+<span class="nc" id="L32">        startGame();</span>
+<span class="nc" id="L33">    }</span>
+    public void startGame() {
+<span class="nc" id="L35">        newApple();</span>
+<span class="nc" id="L36">        running = true;</span>
+<span class="nc" id="L37">        timer = new Timer(DELAY,this);</span>
+<span class="nc" id="L38">        timer.start();</span>
+<span class="nc" id="L39">    }</span>
+    public void paintComponent(Graphics g) {
+<span class="nc" id="L41">        super.paintComponent(g);</span>
+<span class="nc" id="L42">        draw(g);</span>
+<span class="nc" id="L43">    }</span>
+    public void draw(Graphics g) {
+
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if(running) {</span>
+			/*
+			for(int i=0;i&lt;SCREEN_HEIGHT/UNIT_SIZE;i++) {
+				g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
+				g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
+			}
+			*/
+<span class="nc" id="L53">            g.setColor(Color.red);</span>
+<span class="nc" id="L54">            g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);</span>
+
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            for(int i = 0; i&lt; bodyParts;i++) {</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">                if(i == 0) {</span>
+<span class="nc" id="L58">                    g.setColor(Color.green);</span>
+<span class="nc" id="L59">                    g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);</span>
+                }
+                else {
+<span class="nc" id="L62">                    g.setColor(new Color(45,180,0));</span>
+                    //g.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+<span class="nc" id="L64">                    g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);</span>
+                }
+            }
+<span class="nc" id="L67">            g.setColor(Color.red);</span>
+<span class="nc" id="L68">            g.setFont( new Font(&quot;Ink Free&quot;,Font.BOLD, 40));</span>
+<span class="nc" id="L69">            FontMetrics metrics = getFontMetrics(g.getFont());</span>
+<span class="nc" id="L70">            g.drawString(&quot;Score: &quot;+applesEaten, (SCREEN_WIDTH - metrics.stringWidth(&quot;Score: &quot;+applesEaten))/2, g.getFont().getSize());</span>
+<span class="nc" id="L71">        }</span>
+        else {
+<span class="nc" id="L73">            gameOver(g);</span>
+        }
+
+<span class="nc" id="L76">    }</span>
+    public void newApple(){
+<span class="nc" id="L78">        appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;</span>
+<span class="nc" id="L79">        appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;</span>
+<span class="nc" id="L80">    }</span>
+    public void move(){
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        for(int i = bodyParts;i&gt;0;i--) {</span>
+<span class="nc" id="L83">            x[i] = x[i-1];</span>
+<span class="nc" id="L84">            y[i] = y[i-1];</span>
+        }
+
+<span class="nc bnc" id="L87" title="All 5 branches missed.">        switch(direction) {</span>
+            case 'U':
+<span class="nc" id="L89">                y[0] = y[0] - UNIT_SIZE;</span>
+<span class="nc" id="L90">                break;</span>
+            case 'D':
+<span class="nc" id="L92">                y[0] = y[0] + UNIT_SIZE;</span>
+<span class="nc" id="L93">                break;</span>
+            case 'L':
+<span class="nc" id="L95">                x[0] = x[0] - UNIT_SIZE;</span>
+<span class="nc" id="L96">                break;</span>
+            case 'R':
+<span class="nc" id="L98">                x[0] = x[0] + UNIT_SIZE;</span>
+                break;
+        }
+
+<span class="nc" id="L102">    }</span>
+    public void checkApple() {
+<span class="nc bnc" id="L104" title="All 4 branches missed.">        if((x[0] == appleX) &amp;&amp; (y[0] == appleY)) {</span>
+<span class="nc" id="L105">            bodyParts++;</span>
+<span class="nc" id="L106">            applesEaten++;</span>
+<span class="nc" id="L107">            newApple();</span>
+        }
+<span class="nc" id="L109">    }</span>
+    public void checkCollisions() {
+        //checks if head collides with body
+<span class="nc bnc" id="L112" title="All 2 branches missed.">        for(int i = bodyParts;i&gt;0;i--) {</span>
+<span class="nc bnc" id="L113" title="All 4 branches missed.">            if((x[0] == x[i])&amp;&amp; (y[0] == y[i])) {</span>
+<span class="nc" id="L114">                running = false;</span>
+            }
+        }
+        //check if head touches left border
+<span class="nc bnc" id="L118" title="All 2 branches missed.">        if(x[0] &lt; 0) {</span>
+<span class="nc" id="L119">            running = false;</span>
+        }
+        //check if head touches right border
+<span class="nc bnc" id="L122" title="All 2 branches missed.">        if(x[0] &gt; SCREEN_WIDTH) {</span>
+<span class="nc" id="L123">            running = false;</span>
+        }
+        //check if head touches top border
+<span class="nc bnc" id="L126" title="All 2 branches missed.">        if(y[0] &lt; 0) {</span>
+<span class="nc" id="L127">            running = false;</span>
+        }
+        //check if head touches bottom border
+<span class="nc bnc" id="L130" title="All 2 branches missed.">        if(y[0] &gt; SCREEN_HEIGHT) {</span>
+<span class="nc" id="L131">            running = false;</span>
+        }
+
+<span class="nc bnc" id="L134" title="All 2 branches missed.">        if(!running) {</span>
+<span class="nc" id="L135">            timer.stop();</span>
+        }
+<span class="nc" id="L137">    }</span>
+    public void gameOver(Graphics g) {
+        //Score
+<span class="nc" id="L140">        g.setColor(Color.red);</span>
+<span class="nc" id="L141">        g.setFont( new Font(&quot;Ink Free&quot;,Font.BOLD, 40));</span>
+<span class="nc" id="L142">        FontMetrics metrics1 = getFontMetrics(g.getFont());</span>
+<span class="nc" id="L143">        g.drawString(&quot;Score: &quot;+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth(&quot;Score: &quot;+applesEaten))/2, g.getFont().getSize());</span>
+        //Game Over text
+<span class="nc" id="L145">        g.setColor(Color.red);</span>
+<span class="nc" id="L146">        g.setFont( new Font(&quot;Ink Free&quot;,Font.BOLD, 75));</span>
+<span class="nc" id="L147">        FontMetrics metrics2 = getFontMetrics(g.getFont());</span>
+<span class="nc" id="L148">        g.drawString(&quot;Game Over&quot;, (SCREEN_WIDTH - metrics2.stringWidth(&quot;Game Over&quot;))/2, SCREEN_HEIGHT/2);</span>
+<span class="nc" id="L149">    }</span>
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+<span class="nc bnc" id="L153" title="All 2 branches missed.">        if(running) {</span>
+<span class="nc" id="L154">            move();</span>
+<span class="nc" id="L155">            checkApple();</span>
+<span class="nc" id="L156">            checkCollisions();</span>
+        }
+<span class="nc" id="L158">        repaint();</span>
+<span class="nc" id="L159">    }</span>
+
+<span class="nc" id="L161">    public class MyKeyAdapter extends KeyAdapter {</span>
+        @Override
+        public void keyPressed(KeyEvent e) {
+<span class="nc bnc" id="L164" title="All 5 branches missed.">            switch(e.getKeyCode()) {</span>
+                case KeyEvent.VK_LEFT:
+<span class="nc bnc" id="L166" title="All 2 branches missed.">                    if(direction != 'R') {</span>
+<span class="nc" id="L167">                        direction = 'L';</span>
+                    }
+                    break;
+                case KeyEvent.VK_RIGHT:
+<span class="nc bnc" id="L171" title="All 2 branches missed.">                    if(direction != 'L') {</span>
+<span class="nc" id="L172">                        direction = 'R';</span>
+                    }
+                    break;
+                case KeyEvent.VK_UP:
+<span class="nc bnc" id="L176" title="All 2 branches missed.">                    if(direction != 'D') {</span>
+<span class="nc" id="L177">                        direction = 'U';</span>
+                    }
+                    break;
+                case KeyEvent.VK_DOWN:
+<span class="nc bnc" id="L181" title="All 2 branches missed.">                    if(direction != 'U') {</span>
+<span class="nc" id="L182">                        direction = 'D';</span>
+                    }
+                    break;
+            }
+<span class="nc" id="L186">        }</span>
+    }
+}
+//*****************************************
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

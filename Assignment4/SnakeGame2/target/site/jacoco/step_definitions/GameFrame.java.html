@@ -2,7 +2,7 @@
 
 import javax.swing.*;
 
-<span class="nc" id="L5">public class GameFrame extends JFrame {</span>
+public class GameFrame extends JFrame {
     public boolean GameFrame() {
         try {
 <span class="nc" id="L8">            this.add(new GamePanel());</span>
@@ -20,5 +20,16 @@ import javax.swing.*;
 <span class="nc" id="L20">            return false;</span>
         }
     }
+
+<span class="nc" id="L24">    GameFrame(){</span>
+<span class="nc" id="L25">        this.add(new GamePanel());</span>
+//        this.add(new GamePanel3());
+<span class="nc" id="L27">        this.setTitle(&quot;Snake&quot;);</span>
+<span class="nc" id="L28">        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L29">        this.setResizable(false);</span>
+<span class="nc" id="L30">        this.pack();</span>
+<span class="nc" id="L31">        this.setVisible(true);</span>
+<span class="nc" id="L32">        this.setLocationRelativeTo(null);</span>
+<span class="nc" id="L33">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
